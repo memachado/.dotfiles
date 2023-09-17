@@ -5,7 +5,7 @@ My personal linux enviroment configuration.
 
 ``` shell
 # download dotfiles
-git clone git@github.com:memachado/.dotfiles.git ~/.dotfiles
+git clone https://github.com/memachado/.dotfiles.git
 
 
 # install dependencies
