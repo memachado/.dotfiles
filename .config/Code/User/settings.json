@@ -117,8 +117,8 @@
   "debug.allowBreakpointsEverywhere": true,
   "json.maxItemsComputed": 1000000,
   "projectManager.any.baseFolders": [
-    "/home/miguel/Documents/Construshop/Repos",
-    "/home/miguel/Documents/Projects"
+    "~/Documents/Construshop/Repos",
+    "~/Documents/Projects"
   ],
   "projectManager.any.maxDepthRecursion": 1,
   "gitlens.views.commits.files.layout": "list",
@@ -174,7 +174,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "gitlens.views.branches.branches.layout": "list",
-  "todomd.defaultFile": "/home/miguel/Documents/Miguel/todo.txt",
+  "todomd.defaultFile": "~/Documents/Miguel/todo.txt",
   "workbench.editor.untitled.hint": "hidden",
   "terminal.external.linuxExec": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
