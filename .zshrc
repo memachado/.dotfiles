@@ -12,28 +12,28 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  alias-tips
-  asdf
-  fzf
-  )
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    alias-tips
+    fzf
+)
 
-source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source_if () {
+    if [ -f "$1" ]; then
+            source "$1"
+    fi
+}
 
-# aliases
-if [ -f ~/.dotfiles/.aliases/general.sh ]; then
-    . ~/.dotfiles/.aliases/general.sh
-fi
-if [ -f ~/.dotfiles/.aliases/git.sh ]; then
-    . ~/.dotfiles/.aliases/git.sh
-fi
-if [ -f ~/.dotfiles/.aliases/construshop.sh ]; then
-    . ~/.dotfiles/.aliases/construshop.sh
-fi
+source_if $ZSH/oh-my-zsh.sh
+
+source_if ~/.p10k.zsh
+
+source_if ~/.fzf.zsh
+
+precmd() {
+  source ~/.dotfiles/.aliases/.aliases.zsh
+}
