@@ -1,11 +1,11 @@
 #!/usr/bin/zsh
 
 # Git
-alias push="git push"
-alias check="git checkout ${1}"
-alias cbm="git checkout master"
-alias cbd="git checkout develop"
-alias amend="git commit --amend"
+alias push='git push'
+alias check='git checkout ${1}'
+alias cbm='git checkout master'
+alias cbd='git checkout develop'
+alias amend='git commit --amend'
 alias st='git status'
 alias sts='st -s'
 alias pull='git pull'
@@ -14,7 +14,7 @@ alias tag='git tag'
 alias gmm='git merge master'
 alias gmd='git merge develop'
 alias gmc='git merge --continue'
-alias cmt="git commit -m ${*}"
+alias cmt='git commit -m ${*}'
 alias last='log'
 alias fet='git fetch'
 alias rst='git reset --soft HEAD~1'
