@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
-# Git and Gerrit
-alias push="push"
+# Git
+alias pull='git push'
 alias check="git checkout ${1}"
 alias cbm="git checkout master"
 alias cbd="git checkout develop"
@@ -18,6 +18,7 @@ alias cmt="git commit -m ${*}"
 alias last='log'
 alias fet='git fetch'
 alias rst='git reset --soft HEAD~1'
+alias rhm='git reset --hard origin/master'
 alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 
 function add () {
@@ -27,11 +28,6 @@ function add () {
     else
         git add "${1}"
     fi
-}
-
-function push () {
-    ramo=$(git branch | grep -oP '(?<=\* ).+')
-    git push origin HEAD:refs/for/${ramo}
 }
 
 function log () {
