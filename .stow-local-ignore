@@ -1,0 +1,9 @@
+\.git
+\.gitignore
+
+misc
+setup
+
+^/README.*
+^/LICENSE.*
+^/COPYING
