@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 # Git
-alias pull='git push'
+alias push="git push"
 alias check="git checkout ${1}"
 alias cbm="git checkout master"
 alias cbd="git checkout develop"
