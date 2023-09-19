@@ -8,4 +8,4 @@ end='\e[0m'
 # General
 alias src='source ~/.zshrc'
 
-alias ls="exa --icons -b ${*}"
+alias ls='exa --icons -b ${*}'

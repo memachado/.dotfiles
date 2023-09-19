@@ -1,6 +1,6 @@
 execute_if () {
     if [ -f "$1" ]; then
-            . "$1"
+            . $1
     fi
 }
 
