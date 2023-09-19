@@ -10,3 +10,7 @@ echo "Create symlinks ..."
 cd ~/.dotfiles
 
 stow .
+
+cd ~/.fonts
+
+fc-cache -f -v
