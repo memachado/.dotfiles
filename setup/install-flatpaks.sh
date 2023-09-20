@@ -1,23 +1,41 @@
 #!/usr/bin/bash
 
-# games
-flatpak install com.heroicgameslauncher.hgl  -y
-flatpak install net.lutris.Lutris  -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-#security
-flatpak install org.keepassxc.KeePassXC  -y
+flatpak update -y
 
-# office
-flatpak install org.onlyoffice.desktopeditors  -y
-flatpak install org.qownnotes.QOwnNotes  -y
+function install_group {
+    group_name="$1"
+    group_packages=("${@:2}")
 
-# media
-flatpak install com.spotify.Client -y
-flatpak install org.gimp.GIMP  -y
-flatpak install md.obsidian.Obsidian -y
+    echo "Do you want to install the $group_name group? (y/n)"
+    read -r answer
 
-# work
-flatpak install io.dbeaver.DBeaverCommunity  -y
+    if [ "$answer" = "y" ]; then
+        for package in "${group_packages[@]}"; do
+            flatpak install $package -y
+        done
+    fi
+}
 
-# extras
-flatpak install org.gtk.Gtk3theme.Pop-dark -y
+install_group "games" \
+    com.heroicgameslauncher.hgl \
+    net.lutris.Lutris
+
+install_group "security" \
+    org.keepassxc.KeePassXC
+
+install_group "office" \
+    org.onlyoffice.desktopeditors \
+    org.qownnotes.QOwnNotes
+
+install_group "media" \
+    com.spotify.Client \
+    org.gimp.GIMP \
+    md.obsidian.Obsidian
+
+install_group "work" \
+    io.dbeaver.DBeaverCommunity
+
+install_group "extras" \
+    org.gtk.Gtk3theme.Pop-dark
