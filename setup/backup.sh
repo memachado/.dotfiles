@@ -1,12 +1,20 @@
 #!/usr/bin/zsh
 
+backup_if() {
+    if [ -d "$1" ] || [ -f "$1" ]; then
+        cp -r $1 ~/config_backup
+    else
+        echo "${1} not found!"
+    fi
+}
+
 if [ ! -d ~/config_backup ]; then
     mkdir ~/config_backup
 else
     echo "The directory '~/config_backup' already exists!"
 fi
 
-if [ -d ~/backup_config ]; then
+if [ -d ~/config_backup ]; then
     backup_if ~/.aliases
     backup_if ~/.fzf.zsh
     backup_if ~/.scripts
@@ -16,11 +24,4 @@ if [ -d ~/backup_config ]; then
     backup_if ~/.zshrc
 fi
 
-backup_if() {
-    if [ -d "$1" ]; then
-        cp -r $1 ~/backup_config
-    else
-        echo "${1} not found!"
-    fi
-}
 
