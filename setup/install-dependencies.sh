@@ -11,6 +11,7 @@ apt install synaptic -y
 apt install rclone -y
 apt install rclone-desktop -y
 apt install neofetch -y
+apt install dconf-cli -y
 
 # zsh
 apt install zsh

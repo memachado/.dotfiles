@@ -12,3 +12,14 @@ git clone https://github.com/memachado/.dotfiles.git
 bash ~/.dotfiles/setup/install-dependencies.sh
 
 ```
+
+## Gnome Terminal
+
+```
+# export
+dconf dump /org/gnome/terminal/ > ./gnome-terminal.properties
+
+# import 
+cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
+
+```

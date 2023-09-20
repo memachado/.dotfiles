@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 
 # Git
-alias push='git push'
+alias grt='gerrit'
 alias check='git checkout ${1}'
 alias cbm='git checkout master'
 alias cbd='git checkout develop'
@@ -37,4 +37,15 @@ function log () {
     else
         git log -"${1}"
     fi
+}
+
+function gerrit () {
+    if [[ -z ${1} ]]
+    then 
+        ramo=$(git branch | grep -oP '(?<=\* ).+')
+    else
+        ramo=${1}
+    fi
+    
+    git push origin HEAD:refs/for/${ramo}
 }
