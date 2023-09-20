@@ -8,7 +8,11 @@ function install_group {
     group_name="$1"
     group_packages=("${@:2}")
 
-    echo "Do you want to install the $group_name group? (y/n)"
+    echo "Do you want to install the $group_name group?"
+        for package in "${group_packages[@]}"; do
+            echo "- $package"
+        done
+    echo -n "(y/n):"
     read -r answer
 
     if [ "$answer" = "y" ]; then
