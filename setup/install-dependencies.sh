@@ -10,10 +10,13 @@ apt install gnome-tweaks -y
 apt install synaptic -y
 apt install vlc -y
 apt install rsync -y
-apt install rclone -y
-apt install rclone-desktop -y
 apt install neofetch -y
 apt install dconf-cli -y
+
+sudo add-apt-repository ppa:mmozeiko/rclone-browser
+
+apt install rclone-desktop -y
+apt install rclone -y
 
 # zsh
 apt install zsh
