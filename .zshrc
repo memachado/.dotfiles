@@ -37,3 +37,27 @@ source_if ~/.fzf.zsh
 precmd() {
   source ~/.dotfiles/.aliases/.aliases.zsh
 }
+
+#? Choose the editor
+editor() {
+    if hash code 2>/dev/null; then
+        export VISUAL="code --wait"
+        export EDITOR="$VISUAL"
+    elif hash vim 2>/dev/null; then
+        export EDITOR="$VISUAL"
+    else
+        export EDITOR="$VISUAL"
+    fi
+}
+
+editor
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
