@@ -36,10 +36,10 @@ install_group "office" \
 install_group "media" \
     com.spotify.Client \
     org.gimp.GIMP \
-    md.obsidian.Obsidian
 
 install_group "work" \
-    io.dbeaver.DBeaverCommunity
+    io.dbeaver.DBeaverCommunity \
+    com.getpostman.Postman
 
 install_group "extras" \
     org.gtk.Gtk3theme.Pop-dark
