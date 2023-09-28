@@ -1,0 +1,12 @@
+[Unit]
+Description=Verificar e montar unidade do Google Drive
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash ~/.dotfiles/.scripts/gdrive.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

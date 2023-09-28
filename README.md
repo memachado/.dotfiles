@@ -23,3 +23,14 @@ dconf dump /org/gnome/terminal/ > ./gnome-terminal.properties
 cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 
 ```
+
+## GDrive
+
+``` shell
+cp ~/.dotfiles/.services/google-drive-mount.service /etc/systemd/system/google-drive-mount.service
+
+sudo systemctl start google-drive-mount.service
+
+sudo systemctl enable google-drive-mount.service
+
+```
