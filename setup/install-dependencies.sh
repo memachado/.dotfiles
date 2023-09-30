@@ -17,6 +17,7 @@ apt install rsync -y
 apt install neofetch -y
 apt install dconf-cli -y
 
+apt install zsh -y
 
 apt install rclone-desktop -y
 apt install rclone -y
