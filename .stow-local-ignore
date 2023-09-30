@@ -3,6 +3,8 @@
 
 misc
 setup
+crontab
+gnome-terminal.properties
 
 ^/README.*
 ^/LICENSE.*

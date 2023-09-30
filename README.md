@@ -3,6 +3,8 @@ My personal linux enviroment configuration.
 
 ## Installation
 
+Assisted installation, meaning you still have to confirm most of changes!
+
 ``` shell
 # download dotfiles
 git clone https://github.com/memachado/.dotfiles.git
