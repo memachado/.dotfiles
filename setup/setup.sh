@@ -7,11 +7,11 @@ sudo apt install stow -y
 
 echo "Create symlinks ..."
 
-cd ~/.dotfiles
+cd $HOME/.dotfiles
 
 stow .
 
-cd ~/.fonts
+cd $HOME/.fonts
 
 fc-cache -f -v
 
