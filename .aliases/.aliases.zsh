@@ -4,6 +4,6 @@ execute_if () {
     fi
 }
 
-execute_if ~/.dotfiles/.aliases/general.sh
-execute_if ~/.dotfiles/.aliases/git.sh
-execute_if ~/.dotfiles/.aliases/construshop.sh
+execute_if $HOME/.dotfiles/.aliases/general.sh
+execute_if $HOME/.dotfiles/.aliases/git.sh
+execute_if $HOME/.dotfiles/.aliases/construshop.sh

@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Enable Powerlevel10k instant prompt. Should stay close to the top of $HOME/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -20,7 +20,7 @@ plugins=(
 )
 
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
 
 source_if () {
     if [ -f "$1" ]; then
@@ -30,12 +30,12 @@ source_if () {
 
 source_if $ZSH/oh-my-zsh.sh
 
-source_if ~/.p10k.zsh
+source_if $HOME/.p10k.zsh
 
-source_if ~/.fzf.zsh
+source_if $HOME/.fzf.zsh
 
 precmd() {
-  source ~/.dotfiles/.aliases/.aliases.zsh
+  source $HOME/.dotfiles/.aliases/.aliases.zsh
 }
 
 #? Choose the editor
@@ -53,10 +53,10 @@ editor() {
 editor
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '~/google-cloud-sdk/path.zsh.inc' ]; then . '~/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '~/google-cloud-sdk/completion.zsh.inc' ]; then . '~/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

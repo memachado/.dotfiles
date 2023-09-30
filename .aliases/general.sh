@@ -6,6 +6,6 @@ blu='\033[36m'
 end='\e[0m'
 
 # General
-alias src='source ~/.zshrc'
+alias src='source $HOME/.zshrc'
 
 alias ls='exa --icons -b ${*}'

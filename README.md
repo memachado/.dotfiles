@@ -9,7 +9,7 @@ git clone https://github.com/memachado/.dotfiles.git
 
 
 # install dependencies
-bash ~/.dotfiles/setup/install-dependencies.sh
+bash $HOME/.dotfiles/setup/install-dependencies.sh
 
 ```
 
@@ -27,7 +27,7 @@ cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 ## GDrive
 
 ``` shell
-cp ~/.dotfiles/.services/google-drive-mount.service /etc/systemd/system/google-drive-mount.service
+cp $HOME/.dotfiles/.services/google-drive-mount.service /etc/systemd/system/google-drive-mount.service
 
 sudo systemctl start google-drive-mount.service
 
