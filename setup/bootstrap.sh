@@ -1,18 +1,32 @@
 #!/usr/bin/bash
 
+execute_if() {
+    if [ -f "$1" ]; then
+        . $1
+    fi
+}
 
-echo "Installing stow ..."
+execute_if $HOME/.dotfiles/backup.sh
+execute_if $HOME/.dotfiles/install-dependencies.sh
+execute_if $HOME/.dotfiles/install-oh-my-zsh.sh
+execute_if $HOME/.dotfiles/install-flatpaks.sh
 
-sudo apt install stow -y
+echo "Checking if stow is installed ..."
 
-echo "Create symlinks ..."
+if ! command -v stow &>/dev/null; then
+    echo "stow is not installed. Installing stow ..."
+    sudo apt install stow -y
+else
+    echo "stow is already installed."
+    cd $HOME/.dotfiles
 
-cd $HOME/.dotfiles
+    stow .
+fi
 
-stow .
+echo "Checking if fc-cache is installed ..."
 
-cd $HOME/.fonts
-
-fc-cache -f -v
+if command -v fc-cache >/dev/null 2>&1; then
+    fc-cache -f -v
+fi
 
 gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.wallpapers/wallpaper-01.jpg"
