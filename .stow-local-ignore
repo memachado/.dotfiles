@@ -2,6 +2,7 @@
 \.gitignore
 
 \.ssh
+\.vscode
 
 misc
 setup

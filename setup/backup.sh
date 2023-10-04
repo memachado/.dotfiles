@@ -15,13 +15,18 @@ else
 fi
 
 if [ -d $HOME/config_backup ]; then
-    backup_if $HOME/.aliases
-    backup_if $HOME/.fzf.zsh
-    backup_if $HOME/.scripts
-    backup_if $HOME/.local/share/fonts
+    
+    # system folders
     backup_if $HOME/Pictures/Wallpapers
+    backup_if $HOME/.local/share/fonts
+    
+    # dotfiles folders
+    backup_if $HOME/.aliases
+    backup_if $HOME/.scripts
+
+    # dotfiles files    
     backup_if $HOME/.p10k.zsh
-    backup_if $HOME/.ssh
+    backup_if $HOME/.fzf.zsh
     backup_if $HOME/.zshrc
 fi
 
