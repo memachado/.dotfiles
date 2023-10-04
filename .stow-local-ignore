@@ -1,9 +1,10 @@
 \.git
 \.gitignore
-
-\.ssh
 \.vscode
 
+
+
+\.services
 misc
 setup
 crontab
