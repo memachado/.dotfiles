@@ -26,7 +26,12 @@ else
     echo "stow is already installed."
     cd $HOME/.dotfiles
 
-    stow .
+    if [ "$(pwd)" = "$HOME/.dotfiles" ]; then
+        stow .
+    else
+        echo "Please run this script from the $HOME/.dotfiles directory."
+        exit 0
+    fi
 fi
 
 echo "Checking if fc-cache is installed ..."
@@ -35,4 +40,16 @@ if command -v fc-cache >/dev/null 2>&1; then
     fc-cache -f -v
 fi
 
-gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.wallpapers/wallpaper-01.jpg"
+echo "Do you want to change the wallpaper? [y/N]:"
+read -r wallpaper
+
+if [[ $wallpaper =~ ^[Yy]$ ]]; then
+    gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.wallpapers/wallpaper-01.jpg"
+fi
+
+echo "Do you want to change the terminal settings? [y/N]:"
+read -r terminal
+
+if [[ $terminal =~ ^[Yy]$ ]]; then
+    cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
+fi
