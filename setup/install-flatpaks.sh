@@ -12,7 +12,7 @@ function install_group {
         for package in "${group_packages[@]}"; do
             echo "- $package"
         done
-    echo -n "(y/n):"
+    echo -n "[y/N]:"
     read -r answer
 
     if [ "$answer" = "y" ]; then

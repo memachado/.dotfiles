@@ -2,7 +2,13 @@
 
 execute_if() {
     if [ -f "$1" ]; then
-        . $1
+
+        echo "Do you want to execute $1? [y/N]:"
+        read -r choice
+
+        if [[ $choice =~ ^[Yy]$ ]]; then
+            . $1
+        fi
     fi
 }
 

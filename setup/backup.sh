@@ -1,20 +1,22 @@
 #!/usr/bin/zsh
 
+today=$(date +%Y-%m-%d)
+
 backup_if() {
     if [ -d "$1" ] || [ -f "$1" ]; then
-        cp -r $1 $HOME/config_backup
+        cp -r $1 $HOME/config_backup_$today
     else
         echo "${1} not found!"
     fi
 }
 
-if [ ! -d $HOME/config_backup ]; then
-    mkdir $HOME/config_backup
+if [ ! -d $HOME/config_backup_$today ]; then
+    mkdir $HOME/config_backup_$today
 else
-    echo "The directory '$HOME/config_backup' already exists!"
+    echo "The directory '$HOME/config_backup_$today' already exists!"
 fi
 
-if [ -d $HOME/config_backup ]; then
+if [ -d $HOME/config_backup_$today ]; then
     
     # system folders
     backup_if $HOME/Pictures/Wallpapers
