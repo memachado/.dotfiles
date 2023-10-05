@@ -9,13 +9,15 @@ execute_if() {
         if [[ $choice =~ ^[Yy]$ ]]; then
             . $1
         fi
+    else
+        echo "$1 not found!"
     fi
 }
 
-execute_if $HOME/.dotfiles/backup.sh
-execute_if $HOME/.dotfiles/install-dependencies.sh
-execute_if $HOME/.dotfiles/install-oh-my-zsh.sh
-execute_if $HOME/.dotfiles/install-flatpaks.sh
+execute_if $HOME/.dotfiles/setup/backup.sh
+execute_if $HOME/.dotfiles/setup/install-dependencies.sh
+execute_if $HOME/.dotfiles/setup/install-oh-my-zsh.sh
+execute_if $HOME/.dotfiles/setup/install-flatpaks.sh
 
 echo "Checking if stow is installed ..."
 
@@ -44,7 +46,7 @@ echo "Do you want to change the wallpaper? [y/N]:"
 read -r wallpaper
 
 if [[ $wallpaper =~ ^[Yy]$ ]]; then
-    gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/.wallpapers/wallpaper-01.jpg"
+    gsettings set org.gnome.desktop.background picture-uri-dark "file://$HOME/Pictures/Wallpapers/wallpaper-01.jpg"
 fi
 
 echo "Do you want to change the terminal settings? [y/N]:"
