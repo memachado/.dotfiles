@@ -1,17 +1,30 @@
 # .dotfiles
-My personal linux enviroment configuration.
+
+## Base system
+
+* **OS**: Pop!_OS 22.04 LTS x86_64 
+* **Kernel**: 6.5.6-76060506-generic 
+* **Shell**: zsh 5.8.1 
+* **DE**: GNOME 42.5 
+* **WM**: Mutter 
+* **WM** Theme: Pop 
+* **Theme**: Pop-dark [GTK2/3] 
+* **Icons**: breeze [GTK2/3] 
+* **Terminal**: gnome-terminal 
+
+Based on Pop!_OS this can be used on Debian, Ubuntu and other debian-like distros!
 
 ## Installation
 
-Assisted installation, meaning you still have to confirm most of changes!
+Assisted installation, meaning you still have to confirm most changes!
 
 ``` shell
 # download dotfiles
 git clone https://github.com/memachado/.dotfiles.git
 
 
-# install dependencies
-bash $HOME/.dotfiles/setup/install-dependencies.sh
+# run bootsrap
+bash $HOME/.dotfiles/setup/bootstrap.sh
 
 ```
 
@@ -22,17 +35,16 @@ bash $HOME/.dotfiles/setup/install-dependencies.sh
 dconf dump /org/gnome/terminal/ > ./gnome-terminal.properties
 
 # import 
+# already in the bootstrap
 cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 
 ```
 
-## GDrive
+<div align="center">
 
-``` shell
-cp $HOME/.dotfiles/.services/google-drive-mount.service /etc/systemd/system/google-drive-mount.service
+<hr />
 
-sudo systemctl start google-drive-mount.service
+*Remember – hate is always foolish…and love, is always wise.*
 
-sudo systemctl enable google-drive-mount.service
-
-```
+***ARIGATOU ❤️***
+</div>
