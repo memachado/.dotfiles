@@ -46,5 +46,4 @@ cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 
 *Remember – hate is always foolish…and love, is always wise.*
 
-***ARIGATOU ❤️***
 </div>
