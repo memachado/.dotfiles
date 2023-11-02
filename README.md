@@ -56,3 +56,8 @@ cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 *Remember – hate is always foolish…and love, is always wise.*
 
 </div>
+
+## References
+
+* [PROxZIMA/.dotfiles](https://github.com/PROxZIMA/.dotfiles)
+* [JaKooLit/Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots)
