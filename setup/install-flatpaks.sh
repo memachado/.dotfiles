@@ -22,6 +22,17 @@ function install_group () {
     fi
 }
 
+echo "Do you want to use the unsnap script before installing flatpaks? [y/N]:"
+read -r unsnap
+
+if [[ $unsnap =~ ^[Yy]$ ]]; then
+    echo "Installing unsnap ..."
+    cd ~
+    git clone https://github.com/popey/unsnap
+    cd unsnap
+    ./unsnap auto
+fi
+
 install_group "games" \
     com.heroicgameslauncher.hgl \
     net.lutris.Lutris
