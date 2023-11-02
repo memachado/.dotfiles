@@ -1,4 +1,13 @@
+
+<div align="center">
+
 # .dotfiles
+
+
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/memachado/.dotfiles/main?style=for-the-badge)
+ ![GitHub repo size](https://img.shields.io/github/repo-size/memachado/.dotfiles?style=for-the-badge)
+
+</div>
 
 ## Base system
 
