@@ -1,23 +1,16 @@
 #!/usr/bin/bash
 
-sudo add-apt-repository ppa:mmozeiko/rclone-browser
+sudo apt update -y && sudo apt upgrade -y
 
-apt update -y
-apt upgrade -y
+sudo apt install vim stow exa btop gnome-tweaks synaptic vlc rsync neofetch dconf-cli zsh -y
 
-apt install vim -y
-apt install stow -y
-apt install exa -y
-apt install btop -y
-apt install ubuntu-restricted-extras -y
-apt install gnome-tweaks -y
-apt install synaptic -y
-apt install vlc -y
-apt install rsync -y
-apt install neofetch -y
-apt install dconf-cli -y
+sudo apt update -y && sudo apt upgrade -y
 
-apt install zsh -y
+ubuntu-restricted-extras
 
-apt install rclone-desktop -y
-apt install rclone -y
+echo "Do you want to install ubuntu-restricted-extras? [y/N]:"
+read -r extras
+
+if [[ $extras =~ ^[Yy]$ ]]; then
+    sudo apt install ubuntu-restricted-extras -y
+fi

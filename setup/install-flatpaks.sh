@@ -4,7 +4,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 flatpak update -y
 
-function install_group {
+function install_group () {
     group_name="$1"
     group_packages=("${@:2}")
 
