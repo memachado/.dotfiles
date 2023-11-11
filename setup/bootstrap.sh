@@ -20,10 +20,11 @@ execute_if() {
     fi
 }
 
-execute_if $HOME/.dotfiles/setup/backup.sh
 execute_if $HOME/.dotfiles/setup/install-dependencies.sh
+execute_if $HOME/.dotfiles/setup/backup.sh
 execute_if $HOME/.dotfiles/setup/install-oh-my-zsh.sh
 execute_if $HOME/.dotfiles/setup/install-flatpaks.sh
+execute_if $HOME/.dotfiles/setup/remove.sh
 
 echo "Checking if stow is installed ..."
 
@@ -60,4 +61,31 @@ read -r terminal
 
 if [[ $terminal =~ ^[Yy]$ ]]; then
     cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
+fi
+
+echo "Do you want to generate a new ssh key? [y/N]:"
+read -r sshkey
+
+if [[ $sshkey =~ ^[Yy]$ ]]; then
+
+    echo "Please enter your email address:"
+    read -r email
+
+    ssh-keygen -t ed25519 -C "$email" -q -f ~/.ssh/id_ed25519 -N ""
+
+fi
+
+echo "Do you want to configure git global config? [y/N]:"
+read -r gitid
+
+if [[ $gitid =~ ^[Yy]$ ]]; then
+
+    echo "Please enter your email address for global config:"
+    read -r gitemail
+
+    echo "Please enter your name:"
+    read -r name
+
+    git config --global user.email "$gitemail"
+    git config --global user.name "$name"
 fi
