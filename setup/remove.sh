@@ -17,14 +17,6 @@ else
 fi
 
 if [ -d $HOME/config_moved_$today ]; then
-    
-    # system folders
-    #backup_if $HOME/Pictures/Wallpapers
-    #backup_if $HOME/.local/share/fonts
-    
-    # dotfiles folders
-    #backup_if $HOME/.aliases
-    #backup_if $HOME/.scripts
 
     # dotfiles files    
     move_if $HOME/.p10k.zsh

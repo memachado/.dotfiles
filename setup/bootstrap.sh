@@ -89,3 +89,23 @@ if [[ $gitid =~ ^[Yy]$ ]]; then
     git config --global user.email "$gitemail"
     git config --global user.name "$name"
 fi
+
+function add_remote_debugging_port() {
+    file="$1"
+
+    if [ -f "$file" ]; then
+        sed -i '/^Exec=/ {/ --remote-debugging-port=9222/! s/$/ --remote-debugging-port=9222/}' "$file"
+        echo "Remote debugging port added to the lines starting with 'Exec=' in $file"
+    else
+        echo "$file not found!"
+    fi
+}
+
+echo "Do you want to configure chrome debugging? [y/N]:"
+read -r debugging
+
+if [[ $gitid =~ ^[Yy]$ ]]; then
+
+    add_remote_debugging_port
+
+fi
