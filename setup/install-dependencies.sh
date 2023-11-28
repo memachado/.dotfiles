@@ -2,7 +2,7 @@
 
 sudo apt update -y && sudo apt upgrade -y
 
-sudo apt install curl vim stow exa btop gnome-tweaks synaptic vlc rsync neofetch dconf-cli zsh whiptail -y
+sudo apt install curl vim stow exa btop gnome-tweaks synaptic vlc rsync neofetch dconf-cli zsh whiptail nala -y
 
 sudo apt update -y && sudo apt upgrade -y
 
