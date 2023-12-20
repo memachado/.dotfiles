@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+# TODO
+
+# include distinction between before and after reboot 
+
+# https://unix.stackexchange.com/questions/145294/how-to-continue-a-script-after-it-reboots-the-machine
+
 # Check if running as root. If root, script will exit
 if [[ $EUID -eq 0 ]]; then
     echo "This script should not be executed as root! Exiting..."
@@ -104,7 +110,7 @@ function add_remote_debugging_port() {
 echo "Do you want to configure chrome debugging? [y/N]:"
 read -r debugging
 
-if [[ $gitid =~ ^[Yy]$ ]]; then
+if [[ $debugging =~ ^[Yy]$ ]]; then
 
     add_remote_debugging_port
 

@@ -19,4 +19,4 @@ RESPONSES=$(whiptail --checklist "Flatpaks suggested apps" 20 100 10 \
 
 RESPONSES=$(echo "$RESPONSES" | tr -d '"')
 
-flatpak --user install flathub com.github.tchx84.Flatseal $RESPONSES
+flatpak install flathub com.github.tchx84.Flatseal $RESPONSES
