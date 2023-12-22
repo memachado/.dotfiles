@@ -9,19 +9,9 @@
 
 </div>
 
-## Base system
+## System
 
-* **OS**: Pop!_OS 22.04 LTS x86_64 
-* **Kernel**: 6.5.6-76060506-generic 
-* **Shell**: zsh 5.8.1 
-* **DE**: GNOME 42.5 
-* **WM**: Mutter 
-* **WM** Theme: Pop 
-* **Theme**: Pop-dark [GTK2/3] 
-* **Icons**: breeze [GTK2/3] 
-* **Terminal**: gnome-terminal 
-
-Based on Pop!_OS this can be used on Debian, Ubuntu and other debian-like distros!
+Created over **Pop!_OS 22.04 LTS x86_64**, used also on **Ubuntu 22.04.3 LTS x86_64**
 
 ## Installation
 

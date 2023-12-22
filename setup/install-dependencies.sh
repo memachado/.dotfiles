@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
-sudo nala update -y && sudo nala upgrade -y
+sudo nala update && sudo nala upgrade
 
 sudo nala install curl vim stow exa flatpak gnome-software-plugin-flatpak btop gnome-tweaks synaptic vlc rsync neofetch dconf-cli zsh whiptail nala -y
 
-sudo nala update -y && sudo nala upgrade -y
+sudo nala update && sudo nala upgrade
 
 chsh -s $(which zsh)
 

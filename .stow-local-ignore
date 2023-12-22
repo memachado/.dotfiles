@@ -10,6 +10,8 @@ setup
 crontab
 gnome-terminal.properties
 
+bootstrap.sh
+
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
