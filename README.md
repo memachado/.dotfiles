@@ -47,6 +47,27 @@ cat ./gnome-terminal.properties | dconf load /org/gnome/terminal/
 
 </div>
 
+## Backup
+
+For backup I use rclone!
+
+``` shell
+# install
+sudo -v ; curl https://rclone.org/install.sh | sudo bash
+
+# configure gui
+https://github.com/kapitainsky/RcloneBrowser
+
+# configure web gui
+rclone rcd --rc-web-gui
+
+# configure cli
+rclone config
+
+```
+
+
+
 ## References
 
 * [PROxZIMA/.dotfiles](https://github.com/PROxZIMA/.dotfiles)
