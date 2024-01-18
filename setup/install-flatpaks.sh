@@ -5,7 +5,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak update -y
 
 RESPONSES=$(whiptail --checklist "Flatpaks suggested apps" 20 100 10 \
-"com.heroicgameslauncher.hgl" "Heroic Games" on \
+"com.heroicgameslauncher.hgl" "Heroic Games" off \
 "net.lutris.Lutris" "Lutris" off \
 "org.keepassxc.KeePassXC" "KeePassXC" on \
 "org.onlyoffice.desktopeditors" "OnlyOffice" on \
