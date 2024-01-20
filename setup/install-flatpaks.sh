@@ -5,8 +5,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak update -y
 
 RESPONSES=$(whiptail --checklist "Flatpaks suggested apps" 20 100 10 \
-"com.heroicgameslauncher.hgl" "Heroic Games" off \
-"net.lutris.Lutris" "Lutris" off \
 "org.keepassxc.KeePassXC" "KeePassXC" on \
 "org.onlyoffice.desktopeditors" "OnlyOffice" on \
 "org.qownnotes.QOwnNotes" "qownnotes" off \
@@ -14,7 +12,6 @@ RESPONSES=$(whiptail --checklist "Flatpaks suggested apps" 20 100 10 \
 "com.discordapp.Discord" "Discord" off \
 "org.gimp.GIMP" "Gimp2" off \
 "io.dbeaver.DBeaverCommunity" "DBeaver" off \
-"com.getpostman.Postman" "Postman" off \
 3>&1 1>&2 2>&3)
 
 RESPONSES=$(echo "$RESPONSES" | tr -d '"')
