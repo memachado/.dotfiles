@@ -21,6 +21,10 @@ alias rst='git reset --soft HEAD~1'
 alias rhm='git reset --hard origin/master'
 alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 
+# GitHub Feature Branch Workflow
+alias gnf='git checkout -b feature-${*}'
+alias gnb='git checkout -b bug-${*}'
+
 function add () {
     if [[ -z ${1} ]]
     then 
