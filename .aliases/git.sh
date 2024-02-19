@@ -22,8 +22,24 @@ alias rhm='git reset --hard origin/master'
 alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 
 # GitHub Feature Branch Workflow
-alias gnf='git checkout -b feature-${*}'
-alias gnb='git checkout -b bug-${*}'
+alias gnf='gnf'
+alias gnb='gnb'
+
+function gnf() {
+    if [ "$#" -eq 0 ] || [ "$#" -gt 1 ]; then
+        echo "Invalid number of arguments. Please pass exactly one argument to create the branch."
+    else
+        git checkout -b feature-"${1}"
+    fi
+}
+
+function gnb() {
+    if [ "$#" -eq 0 ] || [ "$#" -gt 1 ]; then
+        echo "Invalid number of arguments. Please pass exactly one argument to create the branch."
+    else
+        git checkout -b bug-"${1}"
+    fi
+}
 
 function add () {
     if [[ -z ${1} ]]
