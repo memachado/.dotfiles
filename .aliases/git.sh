@@ -25,6 +25,17 @@ alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gnf='gnf'
 alias gnb='gnb'
 
+alias cmt='cmt'
+
+function cmt() {
+    #git commit -m "${1}"
+    local commit_message=""
+    for arg in "$@"; do
+        commit_message="$commit_message -m \"$arg\""
+    done
+    git commit${commit_message}
+}
+
 function gnf() {
     if [ "$#" -eq 0 ] || [ "$#" -gt 1 ]; then
         echo "Invalid number of arguments. Please pass exactly one argument to create the branch."
