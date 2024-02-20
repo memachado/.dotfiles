@@ -14,7 +14,7 @@ alias tag='git tag'
 alias gmm='git merge master'
 alias gmd='git merge develop'
 alias gmc='git merge --continue'
-alias cmt='git commit -m ${*}'
+
 alias last='log'
 alias fet='git fetch'
 alias rst='git reset --soft HEAD~1'
@@ -24,16 +24,21 @@ alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 # GitHub Feature Branch Workflow
 alias gnf='gnf'
 alias gnb='gnb'
-
+alias push='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
 alias cmt='cmt'
 
 function cmt() {
-    #git commit -m "${1}"
-    local commit_message=""
-    for arg in "$@"; do
-        commit_message="$commit_message -m \"$arg\""
-    done
-    git commit${commit_message}
+    if [ $# -lt 1 ]; then
+        echo "Usage: cmt \"title message\" [description text]"
+        return 1
+    fi
+    title_message=$1
+    description_text=$2
+    if [ -z "$description_text" ]; then
+        git commit -m $title_message
+    else
+        git commit -m $title_message -m $description_text
+    fi
 }
 
 function gnf() {
