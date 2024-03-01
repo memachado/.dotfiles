@@ -27,6 +27,8 @@ alias gnb='gnb'
 alias push='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
 alias cmt='cmt'
 
+alias check-branchs='check-branchs'
+
 function cmt() {
     if [ $# -lt 1 ]; then
         echo "Usage: cmt \"title message\" [description text]"
@@ -84,4 +86,21 @@ function gerrit () {
     fi
     
     git push origin HEAD:refs/for/${ramo}
+}
+
+
+function check-branchs () {
+    for branch in $(git branch | cut -c 3-); do
+        if ! git ls-remote --exit-code origin "$branch" &> /dev/null; then
+            echo "Branch $branch does not exist on the remote server."
+            echo "Do you want to delete it? [y/N]:"
+            read -r deletebranch
+
+            if [[ $deletebranch =~ ^[Yy]$ ]]; then
+
+                git branch --delete $branch
+
+            fi
+        fi
+    done
 }
