@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Windows 11
+Exec=~/.scripts/windows.sh
+Icon=~/Pictures/.icons/windows.png
+Terminal=true
+Type=Application
+Categories=Application;Network;
