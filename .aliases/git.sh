@@ -25,6 +25,7 @@ alias lcg='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gnf='gnf'
 alias gnb='gnb'
 alias push='git push -u origin "$(git rev-parse --abbrev-ref HEAD)"'
+alias push-force='git push --force -u origin "$(git rev-parse --abbrev-ref HEAD)"'
 alias cmt='cmt'
 
 alias check-branchs='check-branchs'
